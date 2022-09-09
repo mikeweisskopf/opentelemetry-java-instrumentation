@@ -141,7 +141,7 @@ abstract class AbstractReactorNettyHttpClientTest extends HttpClientTest<HttpCli
         clientSpan(it, 1, parentSpan, "GET", resolveAddress("/success"))
         serverSpan(it, 2, nettyClientSpan)
 
-        assertSameSpan(parentSpan, onRequestSpan)
+        assertSameSpan(nettyClientSpan, onRequestSpan)
         assertSameSpan(nettyClientSpan, afterRequestSpan)
         assertSameSpan(nettyClientSpan, onResponseSpan)
         assertSameSpan(parentSpan, afterResponseSpan)
